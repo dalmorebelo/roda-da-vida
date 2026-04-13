@@ -249,7 +249,7 @@ export const WheelChart = forwardRef<SVGSVGElement, WheelChartProps>(
             const point = polarToCartesian(angle, labelRadius)
 
             const normalizedAngle = ((angle % (Math.PI * 2)) + Math.PI * 2) % (Math.PI * 2)
-            let anchor: string = 'middle'
+            let anchor: 'start' | 'middle' | 'end' = 'middle'
             if (normalizedAngle > Math.PI * 0.15 && normalizedAngle < Math.PI * 0.85) {
               anchor = 'start'
             } else if (normalizedAngle > Math.PI * 1.15 && normalizedAngle < Math.PI * 1.85) {
