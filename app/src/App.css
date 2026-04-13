@@ -131,6 +131,23 @@
   outline-offset: 3px;
 }
 
+.export-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.export-buttons .export-button {
+  flex: 1;
+}
+
+.export-button--pdf {
+  background: var(--text);
+}
+
+.export-button--whatsapp {
+  background: #25d366;
+}
+
 .controls-intro {
   margin: 0 0 0.75rem;
   font-size: 0.9rem;
@@ -206,10 +223,11 @@
 
 .wheel-card svg {
   width: 100%;
-  max-width: min(100%, 460px);
+  max-width: min(100%, 580px);
   height: auto;
   display: block;
   margin-inline: auto;
+  overflow: visible;
 }
 
 .wheel-grid-circle {
@@ -243,7 +261,7 @@
 
 .wheel-label {
   text-anchor: middle;
-  font-size: 8px;
+  font-size: 10px;
   fill: var(--text);
   font-weight: 600;
   letter-spacing: 0.02em;

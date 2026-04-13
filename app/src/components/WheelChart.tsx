@@ -19,7 +19,7 @@ interface WheelChartProps {
 
 export const WheelChart = forwardRef<SVGSVGElement, WheelChartProps>(
   function WheelChart({ areas, onScoreChange }, ref) {
-    const size = 460
+    const size = 580
     const center = size / 2
     const maxRadius = 190
     const ringCount = 10
@@ -245,8 +245,31 @@ export const WheelChart = forwardRef<SVGSVGElement, WheelChartProps>(
 
           {areas.map((area, index) => {
             const angle = -Math.PI / 2 + index * angleStep + angleStep / 2
-            const labelRadius = maxRadius + 40
+            const labelRadius = maxRadius + 22
             const point = polarToCartesian(angle, labelRadius)
+
+            const normalizedAngle = ((angle % (Math.PI * 2)) + Math.PI * 2) % (Math.PI * 2)
+            let anchor: string = 'middle'
+            if (normalizedAngle > Math.PI * 0.15 && normalizedAngle < Math.PI * 0.85) {
+              anchor = 'start'
+            } else if (normalizedAngle > Math.PI * 1.15 && normalizedAngle < Math.PI * 1.85) {
+              anchor = 'end'
+            }
+
+            const lines = area.label.includes('&')
+              ? area.label.split('&').map((s, i, arr) =>
+                  i < arr.length - 1 ? `${s.trim()} &` : s.trim()
+                )
+              : area.label.length > 14
+                ? (() => {
+                    const words = area.label.split(' ')
+                    const mid = Math.ceil(words.length / 2)
+                    return [words.slice(0, mid).join(' '), words.slice(mid).join(' ')]
+                  })()
+                : [area.label]
+
+            const lineHeight = 11
+            const yOffset = -((lines.length - 1) * lineHeight) / 2
 
             return (
               <text
@@ -254,10 +277,18 @@ export const WheelChart = forwardRef<SVGSVGElement, WheelChartProps>(
                 x={point.x}
                 y={point.y}
                 className="wheel-label wheel-no-pointer"
-                textAnchor="middle"
+                textAnchor={anchor}
                 dominantBaseline="middle"
               >
-                {area.label}
+                {lines.map((line, li) => (
+                  <tspan
+                    key={li}
+                    x={point.x}
+                    dy={li === 0 ? yOffset : lineHeight}
+                  >
+                    {line}
+                  </tspan>
+                ))}
               </text>
             )
           })}

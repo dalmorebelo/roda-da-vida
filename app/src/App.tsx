@@ -35,7 +35,7 @@ function App() {
         />
         <div className="side-panel">
           <SummaryPanel averageScore={averageScore} areas={areas} />
-          <ExportActions svgRef={wheelSvgRef} />
+          <ExportActions svgRef={wheelSvgRef} areas={areas} averageScore={averageScore} />
         </div>
       </section>
 

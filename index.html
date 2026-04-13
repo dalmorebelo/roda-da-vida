@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lucrare | Consultoria Empresarial Estratégica para Aumentar Lucro</title>
+    <meta
+      name="description"
+      content="Lucrare é uma consultoria empresarial estratégica e mentoria para empresárias que querem aumentar lucro empresarial, organizar a operação e escalar com clareza."
+    />
+    <style>
+      :root {
+        --bg: #f8f5ef;
+        --surface: #fff;
+        --text: #121212;
+        --muted: #59544d;
+        --accent: #b68b3e;
+        --accent-dark: #8f6a2c;
+        --border: #e6dfd2;
+        --radius: 18px;
+        --shadow: 0 14px 40px rgba(0, 0, 0, 0.08);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.5;
+      }
+
+      body {
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .container {
+        width: min(1100px, 92vw);
+        margin: 0 auto;
+      }
+
+      section {
+        padding: 72px 0;
+      }
+
+      h1,
+      h2,
+      h3 {
+        line-height: 1.15;
+        margin: 0 0 18px;
+        letter-spacing: -0.02em;
+      }
+
+      h1 {
+        font-size: clamp(2rem, 6vw, 3.6rem);
+      }
+
+      h2 {
+        font-size: clamp(1.6rem, 4vw, 2.5rem);
+      }
+
+      p {
+        margin: 0 0 16px;
+        color: var(--muted);
+        font-size: clamp(1rem, 2.4vw, 1.12rem);
+      }
+
+      .eyebrow {
+        display: inline-block;
+        margin-bottom: 20px;
+        padding: 6px 12px;
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        color: #6a5b3c;
+        font-size: 0.85rem;
+        font-weight: 600;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+      }
+
+      .hero {
+        padding-top: 32px;
+      }
+
+      .hero-box {
+        background: linear-gradient(160deg, #ffffff 0%, #f8f2e5 100%);
+        border: 1px solid var(--border);
+        border-radius: 26px;
+        box-shadow: var(--shadow);
+        padding: clamp(28px, 5vw, 58px);
+      }
+
+      .hero ul,
+      .benefits ul,
+      .problem-list,
+      .offer-list {
+        margin: 22px 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .hero li,
+      .benefits li,
+      .problem-list li,
+      .offer-list li {
+        margin-bottom: 12px;
+        display: flex;
+        gap: 10px;
+        color: #2f2d29;
+      }
+
+      .hero li::before,
+      .benefits li::before,
+      .problem-list li::before,
+      .offer-list li::before {
+        content: "•";
+        color: var(--accent);
+        font-weight: 800;
+      }
+
+      .cta-group {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .btn {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        border: 0;
+        border-radius: 999px;
+        padding: 14px 22px;
+        font-size: 1rem;
+        font-weight: 700;
+        transition: transform 0.22s ease, background 0.22s ease;
+      }
+
+      .btn-primary {
+        background: var(--accent);
+        color: #fff;
+      }
+
+      .btn-primary:hover {
+        background: var(--accent-dark);
+        transform: translateY(-1px);
+      }
+
+      .trust {
+        margin-top: 14px;
+        font-size: 0.92rem;
+        color: #6f675a;
+      }
+
+      .panel {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: clamp(24px, 4vw, 38px);
+      }
+
+      .grid-2 {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .impact {
+        margin-top: 20px;
+        border-left: 4px solid var(--accent);
+        padding-left: 16px;
+        color: #24211d;
+        font-weight: 700;
+      }
+
+      .highlight {
+        color: #1c1810;
+        font-weight: 700;
+      }
+
+      .offer-card {
+        background: #151412;
+        color: #f7f3e9;
+        border-radius: 24px;
+        padding: clamp(28px, 5vw, 46px);
+      }
+
+      .offer-card p,
+      .offer-card li {
+        color: #e8ddc8;
+      }
+
+      .offer-card .btn-primary {
+        background: #d8ac60;
+        color: #151412;
+      }
+
+      .offer-card .btn-primary:hover {
+        background: #e7bd73;
+      }
+
+      .final-cta {
+        text-align: center;
+      }
+
+      .final-cta .btn {
+        font-size: 1.06rem;
+        padding: 16px 24px;
+      }
+
+      .sticky-whatsapp {
+        position: fixed;
+        bottom: 16px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: calc(100% - 28px);
+        max-width: 420px;
+        z-index: 999;
+        box-shadow: 0 10px 28px rgba(0, 0, 0, 0.24);
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.65s ease, transform 0.65s ease;
+      }
+
+      .reveal.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      @media (min-width: 850px) {
+        .hero {
+          padding-top: 52px;
+        }
+
+        section {
+          padding: 95px 0;
+        }
+
+        .grid-2 {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 28px;
+        }
+
+        .sticky-whatsapp {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="hero reveal">
+        <div class="container">
+          <article class="hero-box">
+            <span class="eyebrow">Lucrare</span>
+            <h1>
+              Faturar mais sem lucro é exaustão disfarçada de crescimento.
+            </h1>
+            <p>
+              A Lucrare entrega <strong>consultoria empresarial estratégica</strong> para empresárias que querem
+              <strong>aumentar lucro empresarial</strong> com estrutura, clareza e direção de escala.
+            </p>
+            <ul>
+              <li>Você vende, trabalha o dia inteiro e o caixa continua apertado.</li>
+              <li>O negócio gira, mas depende de você para tudo.</li>
+              <li>Não falta esforço. Falta um plano real de lucro.</li>
+            </ul>
+            <div class="cta-group">
+              <a class="btn btn-primary" href="https://wa.me/5500000000000?text=Quero%20aumentar%20o%20lucro%20da%20minha%20empresa" aria-label="Falar no WhatsApp">
+                Falar no WhatsApp
+              </a>
+            </div>
+            <p class="trust">Atendimento direto, estratégico e confidencial para empresárias.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="reveal" aria-labelledby="problema-title">
+        <div class="container panel">
+          <h2 id="problema-title">Você não está travada por falta de dedicação.</h2>
+          <p>
+            Você está travada porque a operação ficou pesada, as decisões ficaram reativas e o negócio perdeu previsibilidade de margem.
+          </p>
+          <ul class="problem-list">
+            <li>Você trabalha demais e sente que nunca “chega lá”.</li>
+            <li>O faturamento sobe, mas o lucro desaparece.</li>
+            <li>Sem você, a empresa desacelera ou para.</li>
+            <li>Falta clareza sobre prioridades, números e próximos movimentos.</li>
+          </ul>
+          <p class="impact">O problema não é esforço. É estrutura.</p>
+        </div>
+      </section>
+
+      <section class="reveal" aria-labelledby="metodo-title">
+        <div class="container">
+          <span class="eyebrow">Método Lucrare</span>
+          <h2 id="metodo-title">Empresas não quebram só por falta de venda. Quebram por padrões estruturais invisíveis.</h2>
+          <p>
+            A Lucrare atua no ponto que mais dói e quase ninguém enxerga: decisões sem critério, rotina sem processo e crescimento sem inteligência financeira.
+          </p>
+          <p>
+            Com o <span class="highlight">Método Lucrare</span>, você organiza o <strong>faturamento vs lucro</strong>, constrói controle de margem e define uma rota clara de execução para destravar um
+            <strong>crescimento empresarial sustentável</strong>.
+          </p>
+        </div>
+      </section>
+
+      <section class="benefits reveal" aria-labelledby="beneficios-title">
+        <div class="container panel">
+          <h2 id="beneficios-title">O que muda quando você estrutura o lucro</h2>
+          <div class="grid-2">
+            <ul>
+              <li>Lucro previsível para planejar decisões sem ansiedade.</li>
+              <li>Menos caos operacional e mais foco em prioridades.</li>
+            </ul>
+            <ul>
+              <li>Decisões estratégicas baseadas em números e contexto.</li>
+              <li>Modelo pronto para <strong>como escalar empresa</strong> com consistência.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="reveal" aria-labelledby="autoridade-title">
+        <div class="container panel">
+          <h2 id="autoridade-title">Mentoria para empresárias que querem liderança com lucro</h2>
+          <p>
+            A Lucrare combina visão de negócio, comportamento decisório e gestão financeira para quem busca
+            <strong>como ter lucro no negócio</strong> de forma sólida, sem depender de “táticas rápidas”.
+          </p>
+        </div>
+      </section>
+
+      <section class="reveal" aria-labelledby="crenca-title">
+        <div class="container">
+          <h2 id="crenca-title">Mais vendas não garantem lucro. Estrutura garante.</h2>
+          <p>
+            Se você cresce sem processo, sem margem e sem direção, você só aumenta a complexidade do problema.
+            O caminho para lucro consistente não é trabalhar mais: é decidir melhor, organizar melhor e executar com método.
+          </p>
+        </div>
+      </section>
+
+      <section class="reveal" aria-labelledby="oferta-title">
+        <div class="container">
+          <article class="offer-card">
+            <h2 id="oferta-title">Próximo passo: clareza estratégica para sua empresa lucrar de verdade</h2>
+            <p>
+              Em uma conversa inicial, vamos mapear os gargalos que impedem sua margem de crescer e definir se a
+              <strong>mentoria para empresárias</strong> da Lucrare é o movimento certo para você agora.
+            </p>
+            <ul class="offer-list">
+              <li>Diagnóstico direto dos pontos de travamento.</li>
+              <li>Direcionamento de prioridades para lucro e escala.</li>
+              <li>Plano inicial para organizar operação e decisão.</li>
+            </ul>
+            <a class="btn btn-primary" href="https://wa.me/5500000000000?text=Quero%20saber%20mais%20sobre%20a%20consultoria%20Lucrare" aria-label="Falar no WhatsApp">
+              Falar no WhatsApp
+            </a>
+          </article>
+        </div>
+      </section>
+
+      <section class="final-cta reveal" aria-labelledby="cta-final-title">
+        <div class="container panel">
+          <h2 id="cta-final-title">Você já provou que consegue sustentar o negócio. Agora é hora de sustentar o lucro.</h2>
+          <p>
+            Se sua empresa chegou até aqui no esforço, imagine o que acontece quando ela passa a crescer com método.
+          </p>
+          <a class="btn btn-primary" href="https://wa.me/5500000000000?text=Quero%20destravar%20o%20lucro%20da%20minha%20empresa" aria-label="Quero destravar o lucro da minha empresa">
+            Quero destravar o lucro da minha empresa
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <a
+      class="btn btn-primary sticky-whatsapp"
+      href="https://wa.me/5500000000000?text=Quero%20destravar%20o%20lucro%20da%20minha%20empresa"
+      aria-label="Botão fixo para WhatsApp"
+    >
+      Falar no WhatsApp
+    </a>
+
+    <script>
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('show');
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.15 }
+      );
+
+      document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+    </script>
+  </body>
+</html>
